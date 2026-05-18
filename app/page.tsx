@@ -1,29 +1,75 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center text-center px-6">
-      <h1 className="text-5xl font-bold">
-        Ibarra Customs Rods
-      </h1>
+    <main style={styles.container}>
+      {/* LOGO */}
+      <Image
+        src="/Logo.png"
+        alt="Ibarra Customs Rods Logo"
+        width={180}
+        height={180}
+        style={styles.logo}
+        priority
+      />
 
-      <p className="mt-4 text-gray-600 max-w-xl">
+      {/* TITLE */}
+      <h1 style={styles.title}>Ibarra Customs Rods</h1>
+
+      {/* SUBTITLE */}
+      <p style={styles.subtitle}>
         Handcrafted custom fishing rods built for performance, precision, and durability.
       </p>
 
-      <div className="mt-8 flex gap-4">
-        <a
-          href="#products"
-          className="rounded-xl bg-black px-6 py-3 text-white"
-        >
-          View Products
-        </a>
-
-        <a
-          href="#contact"
-          className="rounded-xl border border-black px-6 py-3"
-        >
-          Contact
-        </a>
+      {/* BUTTONS */}
+      <div style={styles.buttons}>
+        <a href="/shop" style={styles.primaryBtn}>View Products</a>
+        <a href="/about" style={styles.secondaryBtn}>Contact</a>
       </div>
     </main>
   );
 }
+
+const styles: { [key: string]: React.CSSProperties } = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "80vh",
+    textAlign: "center",
+    padding: "20px",
+  },
+  logo: {
+    marginBottom: "20px",
+  },
+  title: {
+    fontSize: "42px",
+    fontWeight: 800,
+    marginBottom: "10px",
+  },
+  subtitle: {
+    fontSize: "16px",
+    color: "#666",
+    marginBottom: "30px",
+    maxWidth: "500px",
+  },
+  buttons: {
+    display: "flex",
+    gap: "15px",
+  },
+  primaryBtn: {
+    padding: "10px 18px",
+    backgroundColor: "#000",
+    color: "#fff",
+    textDecoration: "none",
+    borderRadius: "6px",
+  },
+  secondaryBtn: {
+    padding: "10px 18px",
+    border: "1px solid #000",
+    color: "#000",
+    textDecoration: "none",
+    borderRadius: "6px",
+  },
+};
