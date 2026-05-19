@@ -1,15 +1,12 @@
-"use client";
-
 import Link from "next/link";
 
 export default function Navbar() {
   return (
     <nav style={styles.nav}>
-      <div style={styles.links}>
-        <Link href="/" style={styles.link}>Home</Link>
-        <Link href="/shop" style={styles.link}>Shop</Link>
-        <Link href="/about" style={styles.link}>About</Link>
-      </div>
+      <Link href="/" style={styles.link}>HOME</Link>
+      <Link href="/shop" style={styles.link}>SHOP</Link>
+      <Link href="/about" style={styles.link}>ABOUT</Link>
+      <Link href="/contact" style={styles.link}>CONTACT</Link>
     </nav>
   );
 }
@@ -17,19 +14,18 @@ export default function Navbar() {
 const styles: { [key: string]: React.CSSProperties } = {
   nav: {
     width: "100%",
-    padding: "20px 0",
-    borderBottom: "1px solid #eee",
-    backgroundColor: "#fff",
-  },
-  links: {
+    backgroundColor: "#000",
     display: "flex",
     justifyContent: "center",
-    gap: "40px",
+    alignItems: "center",
+    gap: "44px",
+    padding: "24px 20px",
+    letterSpacing: "2px",
   },
   link: {
+    color: "#fff",
     textDecoration: "none",
-    color: "#111",
-    fontSize: "16px",
-    fontWeight: 500,
+    fontSize: "15px",
+    fontWeight: 600,
   },
 };
