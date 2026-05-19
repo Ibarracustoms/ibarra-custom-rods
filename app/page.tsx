@@ -27,7 +27,7 @@ export default function Home() {
 
 const styles: { [key: string]: React.CSSProperties } = {
   hero: {
-    backgroundImage: "url('/hero.jpg')",
+    backgroundImage: "url('/hero.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
