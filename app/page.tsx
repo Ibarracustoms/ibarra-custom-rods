@@ -1,75 +1,94 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <main style={styles.container}>
-      {/* LOGO */}
-      <Image
-        src="/Logo.png"
-        alt="Ibarra Customs Rods Logo"
-        width={180}
-        height={180}
-        style={styles.logo}
-        priority
-      />
+    <main style={styles.hero}>
+      <div style={styles.overlay}>
+        <div style={styles.content}>
+          <h1 style={styles.title}>Ibarra Custom Rods</h1>
 
-      {/* TITLE */}
-      <h1 style={styles.title}>Ibarra Customs Rods</h1>
+          <p style={styles.subtitle}>
+            Handcrafted custom fishing rods built for performance,
+            precision, and durability.
+          </p>
 
-      {/* SUBTITLE */}
-      <p style={styles.subtitle}>
-        Handcrafted custom fishing rods built for performance, precision, and durability.
-      </p>
+          <div style={styles.buttons}>
+            <a href="/shop" style={styles.primaryBtn}>
+              View Products
+            </a>
 
-      {/* BUTTONS */}
-      <div style={styles.buttons}>
-        <a href="/shop" style={styles.primaryBtn}>View Products</a>
-        <a href="/about" style={styles.secondaryBtn}>Contact</a>
+            <a href="/about" style={styles.secondaryBtn}>
+              About Us
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   );
 }
 
 const styles: { [key: string]: React.CSSProperties } = {
-  container: {
+  hero: {
+    backgroundImage: "url('/hero.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    minHeight: "100vh",
+    width: "100%",
+  },
+
+  overlay: {
+    minHeight: "100vh",
+    width: "100%",
+    backgroundColor: "rgba(0,0,0,0.35)",
     display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
     justifyContent: "center",
-    minHeight: "80vh",
+    alignItems: "center",
     textAlign: "center",
     padding: "20px",
   },
-  logo: {
-    marginBottom: "20px",
+
+  content: {
+    color: "#fff",
+    maxWidth: "800px",
   },
+
   title: {
-    fontSize: "42px",
+    fontSize: "72px",
     fontWeight: 800,
-    marginBottom: "10px",
+    marginBottom: "20px",
+    letterSpacing: "-2px",
   },
+
   subtitle: {
-    fontSize: "16px",
-    color: "#666",
-    marginBottom: "30px",
-    maxWidth: "500px",
+    fontSize: "22px",
+    lineHeight: 1.6,
+    marginBottom: "40px",
+    color: "rgba(255,255,255,0.9)",
   },
+
   buttons: {
     display: "flex",
-    gap: "15px",
+    justifyContent: "center",
+    gap: "20px",
+    flexWrap: "wrap",
   },
+
   primaryBtn: {
-    padding: "10px 18px",
-    backgroundColor: "#000",
-    color: "#fff",
-    textDecoration: "none",
-    borderRadius: "6px",
-  },
-  secondaryBtn: {
-    padding: "10px 18px",
-    border: "1px solid #000",
+    padding: "14px 28px",
+    backgroundColor: "#fff",
     color: "#000",
     textDecoration: "none",
-    borderRadius: "6px",
+    borderRadius: "8px",
+    fontWeight: 600,
+    fontSize: "16px",
+  },
+
+  secondaryBtn: {
+    padding: "14px 28px",
+    border: "1px solid #fff",
+    color: "#fff",
+    textDecoration: "none",
+    borderRadius: "8px",
+    fontWeight: 600,
+    fontSize: "16px",
   },
 };
