@@ -4,12 +4,7 @@ export default function Home() {
       <div style={styles.topBar}>Fast shipping on all in-stock items.</div>
 
       <header style={styles.header}>
-        <nav style={styles.nav}>
-          <a href="/" style={styles.navLink}>Home</a>
-          <a href="/shop" style={styles.navLink}>Shop</a>
-          <a href="/about" style={styles.navLink}>About</a>
-          <a href="/contact" style={styles.navLink}>Contact</a>
-        </nav>
+        
       </header>
 
       <section style={styles.hero}>
