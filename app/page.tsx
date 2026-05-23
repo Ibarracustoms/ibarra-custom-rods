@@ -1,54 +1,167 @@
-.socialSection {
-  background: #0b0b0b;
-  padding: 55px 20px 65px;
-  text-align: center;
-  border-top: 1px solid rgba(212, 161, 59, 0.25);
-  border-bottom: 1px solid rgba(212, 161, 59, 0.25);
-}
+import Image from "next/image";
 
-.socialTitleWrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  margin-bottom: 28px;
-}
+const features = [
+  [
+    "/images/premium-component.png",
+    "Premium Components",
+    "We use only top quality blanks and components from trusted brands.",
+  ],
+  [
+    "/images/expert-craftsmanship.png",
+    "Expert Craftsmanship",
+    "Every rod is meticulously built by hand with attention to every detail.",
+  ],
+  [
+    "/images/built-for-performance.png",
+    "Built For Performance",
+    "Designed to handle the toughest conditions and the biggest fish.",
+  ],
+  [
+    "/images/built-in-usa.png",
+    "Built In The USA",
+    "Proudly built in the USA for anglers who demand the best.",
+  ],
+];
 
-.socialTitleWrap h2 {
-  color: #d4a13b;
-  font-size: 15px;
-  letter-spacing: 3px;
-  margin: 0;
-}
+const cards = [
+  [
+    "Custom Rods",
+    "Explore our lineup of custom rods built for any species and technique.",
+    "View Rods",
+    "/images/rod-closeup-02.png",
+    "/rods",
+  ],
+  [
+    "The Build Process",
+    "Every detail matters. See how your custom rod comes to life.",
+    "Learn More",
+    "/images/build-process-01.png",
+    "/build-process",
+  ],
+  [
+    "Gallery",
+    "See our rods in action and the craftsmanship behind every build.",
+    "View Gallery",
+    "/images/angler-lifestyle.png",
+    "#",
+  ],
+  [
+    "About Ibarra",
+    "Built on passion, precision, and a love for fishing. Learn our story.",
+    "Our Story",
+    "/images/butt-cap-detail.png",
+    "/about",
+  ],
+];
 
-.socialLine {
-  width: 140px;
-  height: 1px;
-  background: #d4a13b;
-}
+const socialLinks = [
+  ["Instagram", "https://instagram.com", "IG"],
+  ["Facebook", "https://facebook.com", "FB"],
+  ["YouTube", "https://youtube.com", "YT"],
+  ["TikTok", "https://tiktok.com", "TT"],
+];
 
-.socialIcons {
-  display: flex;
-  justify-content: center;
-  gap: 26px;
-  flex-wrap: wrap;
-}
+export default function Home() {
+  return (
+    <main className="site">
+      <section className="hero">
+        <div className="heroOverlay" />
 
-.socialIcon {
-  width: 48px;
-  height: 48px;
-  border: 1px solid rgba(212, 161, 59, 0.65);
-  color: #d4a13b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  border-radius: 50%;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
+        <div className="heroContent">
+          <h1>
+            Built by hand.
+            <br />
+            Fished with passion.
+          </h1>
 
-.socialIcon:hover {
-  background: #d4a13b;
-  color: #000;
+          <div className="goldLine" />
+
+          <p>
+            Custom fishing rods built for performance, crafted to last a
+            lifetime.
+          </p>
+
+          <a href="#contact" className="goldBtn">
+            Build Your Rod
+          </a>
+        </div>
+      </section>
+
+      <section className="features">
+        {features.map(([icon, title, text]) => (
+          <div className="feature" key={title}>
+            <Image
+              src={icon}
+              alt={title}
+              width={52}
+              height={52}
+              className="featureIcon"
+            />
+
+            <h3>{title}</h3>
+
+            <p>{text}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="socialSection">
+        <div className="socialTitleWrap">
+          <div className="socialLine" />
+          <h2>FOLLOW US</h2>
+          <div className="socialLine" />
+        </div>
+
+        <div className="socialIcons">
+          {socialLinks.map(([name, url, label]) => (
+            <a
+              key={name}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="socialIcon"
+              aria-label={name}
+              title={name}
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="cards">
+        {cards.map(([title, text, button, image, link]) => (
+          <article
+            className="card"
+            key={title}
+            style={{
+              backgroundImage: `url(${image})`,
+            }}
+          >
+            <div className="cardOverlay" />
+
+            <div className="cardContent">
+              <h2>{title}</h2>
+
+              <p>{text}</p>
+
+              <a href={link}>{button}</a>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="quote">
+        <span>“</span>
+
+        <p>
+          I don’t just build rods, I build tools you can rely on when it
+          matters most. My goal is simple — build the best possible rod for
+          serious anglers.
+        </p>
+
+        <strong>— Ibarra Custom Rods</strong>
+      </section>
+    </main>
+  );
 }
