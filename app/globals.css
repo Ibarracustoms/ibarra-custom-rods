@@ -22,6 +22,60 @@ a {
   background: #050505;
 }
 
+/* NAVBAR */
+
+.navbar {
+  height: 125px;
+  background: #030303;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+  border-bottom: 1px solid rgba(212, 161, 59, 0.25);
+  position: relative;
+  z-index: 100;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navLinks a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.navLinks a:hover {
+  color: #d4a13b;
+}
+
+.navButton {
+  border: 1px solid #d4a13b;
+  color: #d4a13b;
+  padding: 18px 28px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.navButton:hover {
+  background: #d4a13b;
+  color: black;
+}
+
 /* HERO */
 
 .hero {
@@ -39,9 +93,9 @@ a {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.72) 35%,
-    rgba(0, 0, 0, 0.2) 100%
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.72) 38%,
+    rgba(0, 0, 0, 0.18) 100%
   );
 }
 
@@ -54,11 +108,11 @@ a {
 
 .heroContent h1 {
   font-size: 96px;
-  line-height: 0.95;
+  line-height: 0.92;
   text-transform: uppercase;
   margin: 0;
   font-weight: 900;
-  letter-spacing: -3px;
+  letter-spacing: -4px;
 }
 
 .goldLine {
@@ -72,7 +126,7 @@ a {
   font-size: 30px;
   line-height: 1.5;
   max-width: 620px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .goldBtn {
@@ -104,6 +158,7 @@ a {
 .feature {
   padding: 54px 34px;
   border-right: 1px solid rgba(212, 161, 59, 0.15);
+  text-align: center;
 }
 
 .feature:last-child {
@@ -202,7 +257,7 @@ a {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.12),
     rgba(0, 0, 0, 0.88)
   );
 }
@@ -276,6 +331,25 @@ a {
 
   .heroContent h1 {
     font-size: 72px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .navButton {
+    display: none;
   }
 }
 
